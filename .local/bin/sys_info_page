@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# Program to output a system information page
+TITLE="System Information Report"
+CURRENT_TIME="$(date | cut -d ' ' -f '1,5,7')"
+TIMESTAMP="Generated on $CURRENT_TIME by $USER"
+report_uptime(){
+	cat <<- EOF
+	<h2>System Uptime</h2>
+	<pre>$(uptime)</pre>
+	EOF
+	return
+}
+report_disk_usage(){
+	cat <<- EOF
+	<h2>Disk Space Utilization</h2>
+	<pre>$(df -h)</pre>
+	EOF
+	return
+}
+report_home_space(){
+	if [[ "$(id -u)" -eq 0 ]]; then
+		cat <<- EOF
+		<h2>Home Space Utilization(All Users)</h2>
+		<pre>$(du -sh /home/*) </pre>
+		EOF
+	else
+		cat <<- EOF
+		<h2>Home Space Utilization</h2>
+		<pre>$(du -sh $HOME)</pre>
+		EOF
+	fi
+	return
+}
+cat << _EOF_
+<html>
+     <head>
+          <title>$TITLE</title>
+     </head>
+     <body>
+          <h1>$TITLE</h1>
+	  <p>$TIMESTAMP</p>
+	<div>$(report_uptime)</div>
+	<div>$(report_disk_usage)</div>
+	<div>$(report_home_space)</div>
+     </body>
+</html>
+_EOF_

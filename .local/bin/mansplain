@@ -1,0 +1,2 @@
+#!/bin/sh
+apropos . | dmenu -i -l 15 -p "Which Man Pages?" | awk '{print $1}' | xargs -r man -Tpdf | zathura -

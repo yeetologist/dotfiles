@@ -1,0 +1,7 @@
+#!/bin/sh
+user=$(echo -e "doas\nbam" | dmenu -i -l 15 -p "Which profile?")
+if [ "$user" = "bam" ]; then
+    $EDITOR $(cat "$HOME/.config/shell/shortcutrc"| awk -F '/' '{print $NF"  "$0}' | dmenu -i -l 15 -p "Which File?" | awk '{print $NF}')
+else
+    [ "$user" = "doas" ] && sudoedit $(sudo find /etc/ | awk -F '/' '{print $NF"  "$0}' | dmenu -i -l 15 -p "Which File?" | awk '{print $NF}') 2>/dev/null || exit 1
+fi

@@ -1,0 +1,151 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkd="mkdir -pv" \
+	ffmpeg="ffmpeg -hide_banner"
+
+# Colorize commands when possible.
+alias \
+	l="ls -lahNF --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	se="sudoedit" \
+	sn="sudo nnn -Hde" \
+	sc="systemctl" \
+	jc="journalctl -r" \
+	ka="killall" \
+	sdn="sudo shutdown -h now" \
+	f="$FILE" \
+	e="$EDITOR" \
+	smi="sudo make install" \
+    neofetch="neofetch | sed '/^[[:space:]]*$/d'" \
+	pt="patch --merge -i" \
+	t="tldr" \
+	W="which -a" \
+	wa="whatis" \
+	z="zathura"
+
+alias \
+	magit="nvim -c MagitOnly" \
+	ref="shortcuts >/dev/null\ source ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc \ source ${XDG_CONFIG_HOME:-$HOME/.config}/zshnameddirrc" \
+ # pacman and paru
+alias \
+	y="paru" \
+	ysyu='paru -Syu --noconfirm' \
+	yi="paru -Qil" \
+	ye="paru -Qqen | tee ~/.config/deploy/official-repos & paru -Qqem | tee ~/.config/deploy/aur" \
+	yc="paru -Scc && paru -Sc" \
+	yr="paru -Rns" \
+	unlock="sudo rm /var/lib/pacman/db.lck" \
+	c="sync;sudo sysctl vm.drop_caches=3" \
+	cleanup='sudo pacman -Rns $(pacman -Qtdq)' \
+  speedtest='speedtest-cli --no-upload --bytes --secure --no-pre-allocate' \
+	mirror="sudo reflector --country 'sg,id,us' --latest 5 --sort rate --protocol https --download-timeout 15 --save /etc/pacman.d/mirrorlist 2> /dev/null"
+
+ # checking filesystem
+alias \
+	lsf="lsblk -f" \
+	dft="df -Th"
+
+ # get top process eating memory / cpu if not work try excute : export LC_ALL='C'
+alias \
+	psmem='ps -e -orss=,args= | sort -b -k1 -nr | head' \
+	pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args|sort -k1,1n -nr | head'
+
+ # audio
+alias \
+	hdmi='pactl set-card-profile 0 output:hdmi-stereo'
+
+ # History and Hosts
+alias \
+	h='history -i' \
+	hg='history -i 1 | grep -i' \
+	hist10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10' \
+	gho="< /etc/hosts grep --line-number "$1" "
+
+# yt-dlp
+alias \
+	yt="yt-dlp --add-metadata --write-sub --sub-lang 'en' -N 3 --sponsorblock-remove 'all' -i -o '~/Downloads/Videos/Youtube/%(title)s.%(ext)s'" \
+	yta="yt-dlp --add-metadata -N 3 --sponsorblock-remove 'all' -x -S 'ext' -f bestaudio/best -o '~/Downloads/Music/%(title)s.%(ext)s'" \
+	ytF="yt-dlp -F" \
+	ytf="yt-dlp -f" \
+	ytamp3="yt-dlp --extract-audio --audio-format 'mp3' --sponsorblock-remove 'all' -o '~/Downloads/Music/%(title)s.%(ext)s' -i" \
+	yt4="yt-dlp --add-metadata -S 'ext' -f 'bestvideo[height<=480]+bestaudio/best' -N '3' --write-sub --sub-lang 'en' --sponsorblock-remove 'all' -i -o '~/Downloads/Videos/Youtube/%(title)s.%(ext)s'" \
+	yt7="yt-dlp --add-metadata -S 'ext' -f 'bestvideo[height<=720]+bestaudio/best' -N '3' --write-sub --sub-lang 'en' --sponsorblock-remove 'all' -i -o '~/Downloads/Videos/Youtube/%(title)s.%(ext)s'" \
+	ytvbest="yt-dlp --add-metadata -S 'ext' -f 'bv*+ba/b' -N '3' --write-sub --sub-lang 'en' --sponsorblock-remove 'all' -i -o '~/Downloads/Videos/Youtube/%(title)s.%(ext)s'" \
+	ytmeta="yt-dlp --add-metadata --write-description --write-info-json --write-annotations --write-sub --sub-lang en --write-thumbnail --skip-download -i" \
+	ytsub="yt-dlp --skip-download --write-auto-sub -i" \
+	yten="yt-dlp --write-sub --sub-lang en --skip-download -i"
+
+#Git Alias
+alias \
+	 gs='git status -sb' \
+	 gc='git commit -v' \
+	 gca='git commit -v --amend' \
+	 gcf='git config --global' \
+	 ga='git add' \
+	 gpl='git pull' \
+	 gh='git help everyday' \
+	 gpom='git pull origin master' \
+	 gpu='git push --set-upstream' \
+	 gpuom='git push -u origin master' \
+	 gd='git diff' \
+	 gds='git diff --staged' \
+	 gcm='git checkout master' \
+	 gnb='git checkout -b' \
+	 gac='git add . && git commit -v' \
+	 grs='git restore --staged' \
+	 gr='git restore' \
+	 grss='git restore --source' \
+	 gre='git remote' \
+	 gcl='git clone' \
+	 gcle='git clean -fdi' \
+	 gl="git log --graph --branches --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold red)(%ar)%C(reset)%C(auto)%d%C(reset)%n'' %C(yellow)%s%C(reset) %C(cyan)- %an%C(reset)' --all" \
+	 gt='git ls-tree -r master --name-only' \
+	 gb='git branch' \
+	 gbr="git branch remote" \
+	 gfr="git remote update"  \
+	 gm='git merge' \
+	 gf="git fetch" \
+	 gst='git stash' \
+	 gfa="git fetch --all" \
+	 gf="git fetch origin" \
+	 grf="git reflog" \
+	 grh="git reset --hard HEAD~"
+
+# # npm aliases
+# alias \
+#   cra="npx create-react-app"  \
+#   nin="npm init" \
+#   ni="npm install" \
+#   nrs="npm run start -s --" \
+#   nrb="npm run build -s --" \
+#   nrd="npm run dev -s --" \
+#   nrt="npm run test -s --" \
+#   nrtw="npm run test:watch -s --" \
+#   nrv="npm run validate -s --" \
+#   rmn="rm -rf node_modules" \
+#   npmwipe="rm -rf node_modules && npm i && echo NPM is done"
+
+# # yarn aliases
+# alias \
+#   yin="yarn init" \
+#   yar="yarn run" \
+#   yab="yarn build" \
+#   yal="yarn lint:fix" \
+#   yac="yarn commit" \
+#   yas="yarn start" \
+#   yasb="yarn storybook:start" \
+#   yat="yarn test" \
+#   yatw="yarn test:watch"

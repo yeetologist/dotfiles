@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# A dmenu wrapper script for system functions.
+
+cmds="\
+leave		kill -TERM $(pgrep -u $USER "^dwm$")
+Renew		kill -HUP $(pgrep -u $USER "^dwm$")
+hibernate	slock ${hib:-systemctl suspend-then-hibernate -i}
+reboot		${reb:-sudo -A reboot}
+shutdown	${shut:-sudo -A shutdown -h now}"
+
+choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu)" || exit 1
+
+`echo "$cmds" | grep "^$choice	" | cut -d '	' -f2-`
