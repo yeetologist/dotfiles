@@ -92,7 +92,7 @@ export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_TMPFILE='/tmp/nnn'
 export NNN_PLUG='p:preview-tabbed;P:preview-tui;f:fzopen;n:!nvim -c VimwikiIndex;m:cmusq;d:dragdrop;w:!setbg "$nnn"*;v:!mpv "$nnn"*;c:!code "$nnn"*;u:!atool --each --extract "$nnn"*;i:!sxiv "$nnn"*;b:!realpath "$nnn">>/home/bam/.config/shell/shortcutrc*'
 export NNN_ARCHIVE="\\.(gz|tar|xz|rar|zip)$"
-export NNN_BMS="d:$HOME/Downloads;D:$HOME/Documents;c:$HOME/.config;m:$HOME/Downloads/Music;M:/mnt;y:$HOME/Downloads/Videos/Youtube;a:$HOME/Downloads/Animes;n:$HOME/Downloads/Novel;s:$HOME/Downloads/Series;P:$HOME/Downloads/Pictures;p:$HOME/Downloads/Programs;j:$HOME/Downloads/JDownloader2;v:$HOME/Downloads/Videos;t:$HOME/Downloads/Torrent;w:$HOME/Downloads/Wallpapers;e:$HOME/Downloads/Essential;g:$HOME/Downloads/git-clone;S:$HOME/.local/src;b:$HOME/.local/bin;l:$HOME/.local"
+export NNN_BMS="d:$HOME/Downloads;D:$HOME/Documents;c:$HOME/.config;C:$HOME/.cache;m:$HOME/Downloads/Music;M:/mnt;y:$HOME/Downloads/Videos/Youtube;a:$HOME/Downloads/Animes;n:$HOME/Downloads/Novel;s:$HOME/Downloads/Series;P:$HOME/Downloads/Pictures;p:$HOME/Downloads/Programs;j:$HOME/Downloads/JDownloader2;v:$HOME/Downloads/Videos;t:$HOME/Downloads/Torrent;w:$HOME/Downloads/Wallpapers;e:$HOME/Downloads/Essential;g:$HOME/Downloads/git-clone;S:$HOME/.local/src;b:$HOME/.local/bin;l:$HOME/.local"
 export NNN_COLORS="3162"
 
 n(){
