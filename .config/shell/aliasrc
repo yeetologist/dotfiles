@@ -29,7 +29,7 @@ alias \
 	f="$FILE" \
 	e="$EDITOR" \
 	smi="sudo make install" \
-    neofetch="neofetch | sed '/^[[:space:]]*$/d'" \
+  neofetch="neofetch | sed '/^[[:space:]]*$/d'" \
 	pt="patch --merge -i" \
 	t="tldr" \
 	W="which -a" \
@@ -76,14 +76,14 @@ alias \
 
 # yt-dlp
 alias \
-	yt="yt-dlp --add-metadata --write-sub --sub-lang 'en' -N 3 --sponsorblock-remove 'all' -i -o '~/Downloads/Videos/Youtube/%(title)s.%(ext)s'" \
-	yta="yt-dlp --add-metadata -N 3 --sponsorblock-remove 'all' -x -S 'ext' -f bestaudio/best -o '~/Downloads/Music/%(title)s.%(ext)s'" \
+  yt="yt-dlp --add-metadata --write-sub --sub-lang 'en' -N 3 -i" \
+  yta="yt-dlp --add-metadata -N 3 -x -S 'ext' -f bestaudio/best -o '~/Downloads/Music/%(title)s_%(id)s.%(ext)s'" \
 	ytF="yt-dlp -F" \
 	ytf="yt-dlp -f" \
-	ytamp3="yt-dlp --extract-audio --audio-format 'mp3' --sponsorblock-remove 'all' -o '~/Downloads/Music/%(title)s.%(ext)s' -i" \
-	yt4="yt-dlp --add-metadata -S 'ext' -f 'bestvideo[height<=480]+bestaudio/best' -N '3' --write-sub --sub-lang 'en' --sponsorblock-remove 'all' -i -o '~/Downloads/Videos/Youtube/%(title)s.%(ext)s'" \
-	yt7="yt-dlp --add-metadata -S 'ext' -f 'bestvideo[height<=720]+bestaudio/best' -N '3' --write-sub --sub-lang 'en' --sponsorblock-remove 'all' -i -o '~/Downloads/Videos/Youtube/%(title)s.%(ext)s'" \
-	ytvbest="yt-dlp --add-metadata -S 'ext' -f 'bv*+ba/b' -N '3' --write-sub --sub-lang 'en' --sponsorblock-remove 'all' -i -o '~/Downloads/Videos/Youtube/%(title)s.%(ext)s'" \
+  ytamp3="yt-dlp --extract-audio --audio-format 'mp3' -o '~/Downloads/Music/%(title)s_%(id)s.%(ext)s' -i" \
+  yt4="yt-dlp --add-metadata -S 'ext' -f 'bestvideo[height<=480]+bestaudio/best' -N '3' --write-sub --sub-lang 'en' -i" \
+  yt7="yt-dlp --add-metadata -S 'ext' -f 'bestvideo[height<=720]+bestaudio/best' -N '3' --write-sub --sub-lang 'en' -i'" \
+  ytvbest="yt-dlp --add-metadata -S 'ext' -f 'bv*+ba/b' -N '3' --write-sub --sub-lang 'en' -i" \
 	ytmeta="yt-dlp --add-metadata --write-description --write-info-json --write-annotations --write-sub --sub-lang en --write-thumbnail --skip-download -i" \
 	ytsub="yt-dlp --skip-download --write-auto-sub -i" \
 	yten="yt-dlp --write-sub --sub-lang en --skip-download -i"
