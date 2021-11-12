@@ -92,7 +92,7 @@ export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_TMPFILE='/tmp/nnn'
 export NNN_PLUG='p:preview-tabbed;P:preview-tui;f:fzopen;n:!nvim -c VimwikiIndex;m:cmusq;d:dragdrop;w:!setbg "$nnn"*;v:!mpv "$nnn"*;c:!code "$nnn"*;u:!atool --each --extract "$nnn"*;i:!sxiv "$nnn"*;b:!realpath "$nnn">>/home/bam/.config/shell/shortcutrc*'
 export NNN_ARCHIVE="\\.(gz|tar|xz|rar|zip)$"
-export NNN_BMS="d:$HOME/Downloads;D:$HOME/Documents;c:$HOME/.config;C:$HOME/.cache;m:$HOME/Downloads/Music;M:/mnt;y:$HOME/Downloads/Videos/Youtube;a:$HOME/Downloads/Animes;n:$HOME/Downloads/Novel;s:$HOME/Downloads/Series;P:$HOME/Downloads/Pictures;p:$HOME/Downloads/Programs;j:$HOME/Downloads/JDownloader2;v:$HOME/Downloads/Videos;t:$HOME/Downloads/Torrent;w:$HOME/Downloads/Wallpapers;e:$HOME/Downloads/Essential;g:$HOME/Downloads/git-clone;S:$HOME/.local/src;b:$HOME/.local/bin;l:$HOME/.local"
+export NNN_BMS="d:$HOME/dl;D:$HOME/Documents;c:$HOME/.config;C:$HOME/.cache;m:$HOME/dl/Music;M:/mnt;y:$HOME/dl/Videos/Youtube;a:$HOME/dl/Animes;n:$HOME/dl/Novel;s:$HOME/dl/Series;P:$HOME/dl/Pictures;p:$HOME/dl/Programs;j:$HOME/dl/jd;v:$HOME/dl/Videos;t:$HOME/dl/Torrent;w:$HOME/dl/Pictures/Wallpapers;e:$HOME/dl/Essential;g:$HOME/dl/git-clone;S:$HOME/.local/src;b:$HOME/.local/bin;l:$HOME/.local"
 export NNN_COLORS="3162"
 
 n(){
@@ -106,7 +106,7 @@ bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 bindkey -s '^y' 'config-edit\n'
 bindkey -s '^h' 'hdmi\n'
 bindkey -s '^p' 'ping -c 2 google.com\n'
-bindkey -s '^b' 'echo 1 > /sys/class/backlight/intel_backlight/brightness\n'
+bindkey -s '^b' 'xrandr --output eDP1 --off\n'
 bindkey '^[[P' delete-char
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line

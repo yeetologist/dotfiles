@@ -1,2 +1,2 @@
--o '~/Downloads/Videos/Youtube/%(title)s_%(id)s.%(ext)s'
+-o '~/dl/Videos/Youtube/%(title)s_%(id)s.%(ext)s'
 --sponsorblock-remove 'all'
