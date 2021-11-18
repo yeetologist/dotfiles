@@ -64,6 +64,7 @@ sudo
 sxiv
 tealdeer
 texinfo
+translate-shell
 transmission-qt
 unrar
 unzip
@@ -80,6 +81,7 @@ xorg-xinit
 xorg-xprop
 xorg-xwininfo
 xwallpaper
+yt-dlp
 zathura
 zathura-pdf-mupdf
 zsh
