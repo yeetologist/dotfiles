@@ -89,16 +89,47 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # NNN
 export NNN_FIFO='/tmp/nnn.fifo'
-export NNN_TMPFILE='/tmp/nnn'
-export NNN_PLUG='p:preview-tabbed;P:preview-tui;f:fzopen;n:!nvim -c VimwikiIndex;m:cmusq;d:dragdrop;w:!setbg "$nnn"*;v:!mpv "$nnn"*;c:!code "$nnn"*;u:!atool --each --extract "$nnn"*;i:!sxiv "$nnn"*;b:!realpath "$nnn">>/home/bam/.config/shell/shortcutrc*'
-export NNN_ARCHIVE="\\.(gz|tar|xz|rar|zip)$"
-export NNN_BMS="d:$HOME/dl;D:$HOME/Documents;c:$HOME/.config;C:$HOME/.cache;m:$HOME/dl/Music;M:/mnt;y:$HOME/dl/Videos/Youtube;a:$HOME/dl/Videos/Animes;n:$HOME/dl/Novel;s:$HOME/dl/Videos/Series;P:$HOME/dl/Pictures;p:$HOME/dl/Programs;j:$HOME/dl/jd;v:$HOME/dl/Videos;t:$HOME/dl/Torrent;w:$HOME/dl/Pictures/Wallpapers;e:$HOME/dl/Videos/Essential;g:$HOME/dl/git-clone;S:$HOME/.local/src;b:$HOME/.local/bin;l:$HOME/.local"
+export NNN_ARCHIVE="\\.(gz|tar|xz|rar|zip|zst)$"
 export NNN_COLORS="3162"
+export NNN_TMPFILE='/tmp/nnn'
+export NNN_PLUG="b:!realpath '$nnn'>>/home/bam/.config/shell/shortcutrc*;\
+c:!code '$nnn'*;\
+f:fzopen;\
+i:!sxiv '$nnn'*;\
+m:cmusq;\
+n:!nvim -c VimwikiIndex;\
+p:preview-tabbed;\
+P:preview-tui;\
+u:!atool --each --extract '$nnn'*;\
+v:!mpv '$nnn'*;\
+w:!setbg '$nnn'*"
+export NNN_BMS="a:$HOME/dl/Videos/Animes;\
+b:$HOME/.local/bin;\
+c:$HOME/.config;\
+C:$HOME/.cache;\
+d:$HOME/dl;\
+D:$HOME/Documents;\
+e:$HOME/dl/Videos/Essential;\
+g:$HOME/dl/git-clone;\
+j:$HOME/dl/jd;\
+l:$HOME/.local;\
+m:$HOME/dl/Music;\
+M:/mnt;\
+n:$HOME/dl/Novel;\
+p:$HOME/dl/Programs;\
+P:$HOME/dl/Pictures;\
+s:$HOME/dl/Videos/Series;\
+S:$HOME/.local/src;\
+t:$HOME/dl/Torrent;\
+v:$HOME/dl/Videos;\
+w:$HOME/dl/Pictures/Wallpapers;\
+y:$HOME/dl/Videos/Youtube"
 
 n(){
 nnn -Hdexr "$@"
 [ -f "$NNN_TMPFILE" ] && . "$NNN_TMPFILE" && rm -f "$NNN_TMPFILE" > /dev/null
 }
+
 # Use lf to switch directories and bind it to ctrl-o
 bindkey -s '^o' 'n\n'
 # bindkey -s '^a' 'bc -lq\n'
@@ -111,6 +142,7 @@ bindkey '^[[P' delete-char
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+
 # Load Plugins; should be last.
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2> /dev/null
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
