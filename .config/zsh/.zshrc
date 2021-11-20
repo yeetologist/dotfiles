@@ -91,18 +91,26 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_ARCHIVE="\\.(gz|tar|xz|rar|zip|zst)$"
 export NNN_COLORS="3162"
-export NNN_TMPFILE='/tmp/nnn'
-export NNN_PLUG="b:!realpath '$nnn'>>/home/bam/.config/shell/shortcutrc*;\
-c:!code '$nnn'*;\
-f:fzopen;\
-i:!sxiv '$nnn'*;\
+export NNN_TMPFILE='/tmp/.lastd'
+export NNN_PREVIEWDIR="$XDG_CACHE_HOME/nnn/previews"
+NNN_PLUG_INLINE='b:!realpath "$nnn">>/home/bam/.config/shell/shortcutrc*;c:!code "$nnn"*;n:!nvim -c VimwikiIndex;v:!mpv "$nnn"*;w:!setbg "$nnn"*'
+export NNN_PLUG="$NNN_PLUG_INLINE;\
+*:togglex;\
+3:mp3conv;\
+d:diffs;\
+D:dups;\
+f:fixname;\
+i:imgview;\
+I:imgur;\
 m:cmusq;\
-n:!nvim -c VimwikiIndex;\
+M:mimelist;\
+o:organize;\
 p:preview-tabbed;\
 P:preview-tui;\
-u:!atool --each --extract '$nnn'*;\
-v:!mpv '$nnn'*;\
-w:!setbg '$nnn'*"
+r:ringtone;\
+s:suedit;\
+S:splitjoin;\
+x:xdgdefault;"
 export NNN_BMS="a:$HOME/dl/Videos/Animes;\
 b:$HOME/.local/bin;\
 c:$HOME/.config;\
@@ -123,7 +131,7 @@ S:$HOME/.local/src;\
 t:$HOME/dl/Torrent;\
 v:$HOME/dl/Videos;\
 w:$HOME/dl/Pictures/Wallpapers;\
-y:$HOME/dl/Videos/Youtube"
+y:$HOME/dl/Videos/Youtube;"
 
 n(){
 nnn -Hdexr "$@"
