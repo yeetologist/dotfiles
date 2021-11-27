@@ -58,12 +58,15 @@ export NNN_PLUG="$NNN_PLUG_INLINE;\
 3:mp3conv;\
 d:diffs;\
 D:dups;\
+e:fzplug;\
 f:fixname;\
 i:imgview;\
 I:imgur;\
+k:pskill;\
 m:cmusq;\
 M:mimelist;\
-o:organize;\
+o:fzopen;\
+O:organize;\
 p:preview-tabbed;\
 P:preview-tui;\
 r:ringtone;\
