@@ -24,7 +24,7 @@ alias \
 	sn="sudo nnn -Hde" \
 	sc="systemctl" \
 	jc="journalctl -r" \
-	ka="killall" \
+	ka="pkill" \
 	sdn="sudo shutdown -h now" \
 	f="$FILE" \
 	e="$EDITOR" \
@@ -66,6 +66,11 @@ alias \
  # audio
 alias \
 	hdmi='pactl set-card-profile 0 output:hdmi-stereo'
+
+ # translate-shell
+ alias \
+   tri='trans en:id' \
+   tre='trans id:en'
 
  # History and Hosts
 alias \
