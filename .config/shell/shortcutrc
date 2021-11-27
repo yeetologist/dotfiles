@@ -1,11 +1,11 @@
 /home/bam/.config/shell/aliasrc
 /home/bam/.config/shell/profile
 /home/bam/.config/zsh/.zshrc
-/home/bam/.local/src/dmenu/config.h
 /home/bam/.local/src/dwm/config.h
 /home/bam/.local/src/st/config.h
-/home/bam/.local/src/tabbed/config.h
 /home/bam/.local/src/dwmblocks/config.h
+/home/bam/.local/src/dmenu/config.h
+/home/bam/.local/src/tabbed/config.h
 /home/bam/.config/dunst/dunstrc
 /home/bam/.config/htoprc
 /home/bam/.config/lf/lfrc
