@@ -54,9 +54,10 @@ ntp
 pamixer
 patch
 pcmanfm
+pipewire
+pipewire-pulse
 pkgconf
 poppler
-pulseaudio-alsa
 pulsemixer
 qtcreator
 reflector
