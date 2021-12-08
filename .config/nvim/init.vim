@@ -80,6 +80,7 @@ call plug#end()
          \ '<c-t>': 'tab split',
          \ '<c-x>': 'split',
          \ '<c-v>': 'vsplit'}
+    let g:nnn#command = 'nnn -H'
 
 " lightline.vim
      let g:lightline = {
@@ -148,6 +149,7 @@ function! ToggleHiddenAll()
         set noruler
         set laststatus=0
         set noshowcmd
+        highlight Normal guibg=none
     else
         let s:hidden_all = 0
         set showmode
