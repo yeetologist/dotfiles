@@ -81,6 +81,7 @@ alias \
 
 # yt-dlp
 alias \
+  yd="yt-dlp" \
   yt="yt-dlp --add-metadata --write-sub --sub-lang 'en' -N 3 -i" \
   yta="yt-dlp --add-metadata -N 3 -x -S 'ext' -f bestaudio/best -o '~/Downloads/Music/%(title)s_%(id)s.%(ext)s'" \
 	ytF="yt-dlp -F" \
