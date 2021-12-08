@@ -20,7 +20,7 @@ call plug#end()
   colorscheme onedark
   set termguicolors
   " set bg=light
-  silent! set splitbelow nostartofline linespace=0 whichwrap=b,s scrolloff=0 sidescroll=0 splitright noshowmode noshowcmd
+  silent! set splitbelow nostartofline linespace=0 whichwrap=b,s scrolloff=8 sidescroll=0 splitright noshowmode noshowcmd
   silent! set cursorline nocursorcolumn colorcolumn= concealcursor=nvc conceallevel=0 number norelativenumber
 
 " Editing
