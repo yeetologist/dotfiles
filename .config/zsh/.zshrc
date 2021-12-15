@@ -147,6 +147,7 @@ bindkey -s '^o' 'n\n'
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 bindkey -s '^y' 'config-edit\n'
 bindkey -s '^h' 'hdmi\n'
+bindkey -s '^a' 'anal\n'
 bindkey -s '^p' 'ping -c 2 google.com\n'
 bindkey -s '^b' 'xrandr --output eDP1 --off\n'
 bindkey '^[[P' delete-char

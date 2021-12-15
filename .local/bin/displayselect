@@ -59,6 +59,8 @@ onescreen() { # If only one output available or chosen.
 postrun() { # Stuff to run to clean up.
 	setbg		# Fix background if screen size/arangement has changed.
 	#remaps		# Re-remap keys if keyboard added (for laptop bases)
+  [ $chosen == eDP1 ] && pactl set-card-profile "alsa_card.pci-0000_00_0e.0" "output:analog-stereo+input:analog-stereo"
+  [ $chosen == HDMI1 ] && pactl set-card-profile "alsa_card.pci-0000_00_0e.0" "output:hdmi-stereo+input:analog-stereo"
 	{ killall dunst ; setsid -f dunst ;} >/dev/null 2>&1 # Restart dunst to ensure proper location on screen
 	}
 

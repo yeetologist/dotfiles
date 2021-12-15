@@ -65,7 +65,8 @@ alias \
 
  # audio
 alias \
-	hdmi='pactl set-card-profile alsa_card.pci-0000_00_0e.0 output:hdmi-stereo+input:analog-stereo'
+	hdmi='pactl set-card-profile alsa_card.pci-0000_00_0e.0 output:hdmi-stereo+input:analog-stereo' \
+	anal='pactl set-card-profile alsa_card.pci-0000_00_0e.0 output:analog-stereo+input:analog-stereo'
 
  # translate-shell
  alias \
