@@ -39,6 +39,7 @@ alias \
 alias \
 	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null\ source ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc \ source ${XDG_CONFIG_HOME:-$HOME/.config}/zshnameddirrc" \
+
  # pacman and paru
 alias \
 	y="paru" \
@@ -50,7 +51,7 @@ alias \
 	unlock="sudo rm /var/lib/pacman/db.lck" \
 	c="sync;sudo sysctl vm.drop_caches=3" \
 	cleanup='sudo pacman -Rns $(pacman -Qtdq)' \
-  speedtest='speedtest-cli --no-upload --bytes --secure --no-pre-allocate' \
+  speedtest='speedtest-cli --bytes' \
 	mirror="sudo reflector --country 'sg,id,us' --latest 5 --sort rate --protocol https --download-timeout 15 --save /etc/pacman.d/mirrorlist 2> /dev/null"
 
  # checking filesystem
@@ -63,10 +64,11 @@ alias \
 	psmem='ps -e -orss=,args= | sort -b -k1 -nr | head' \
 	pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args|sort -k1,1n -nr | head'
 
- # audio
+ # audio & display
 alias \
 	hdmi='pactl set-card-profile alsa_card.pci-0000_00_0e.0 output:hdmi-stereo+input:analog-stereo' \
-	anal='pactl set-card-profile alsa_card.pci-0000_00_0e.0 output:analog-stereo+input:analog-stereo'
+	anal='pactl set-card-profile alsa_card.pci-0000_00_0e.0 output:analog-stereo+input:analog-stereo' \
+  disoff='xrandr --output eDP1 --off --output HDMI1 --off'
 
  # translate-shell
  alias \
@@ -89,7 +91,7 @@ alias \
 	ytf="yt-dlp -f" \
   ytamp3="yt-dlp --extract-audio --audio-format 'mp3' -o '~/Downloads/Music/%(title)s_%(id)s.%(ext)s' -i" \
   yt4="yt-dlp --add-metadata -S 'ext' -f 'bestvideo[height<=480]+bestaudio/best' -N '3' --write-sub --sub-lang 'en' -i" \
-  yt7="yt-dlp --add-metadata -S 'ext' -f 'bestvideo[height<=720]+bestaudio/best' -N '3' --write-sub --sub-lang 'en' -i'" \
+  yt7="yt-dlp --add-metadata -S 'ext' -f 'bestvideo[height<=720]+bestaudio/best' -N '3' --write-sub --sub-lang 'en' -i" \
   ytvbest="yt-dlp --add-metadata -S 'ext' -f 'bv*+ba/b' -N '3' --write-sub --sub-lang 'en' -i" \
 	ytmeta="yt-dlp --add-metadata --write-description --write-info-json --write-annotations --write-sub --sub-lang en --write-thumbnail --skip-download -i" \
 	ytsub="yt-dlp --skip-download --write-auto-sub -i" \

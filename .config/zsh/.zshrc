@@ -145,11 +145,10 @@ nnn -Hdexr "$@"
 bindkey -s '^o' 'n\n'
 # bindkey -s '^a' 'bc -lq\n'
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
-bindkey -s '^y' 'config-edit\n'
-bindkey -s '^h' 'hdmi\n'
+bindkey -s '^t' 'hdmi\n'
 bindkey -s '^a' 'anal\n'
 bindkey -s '^p' 'ping -c 2 google.com\n'
-bindkey -s '^b' 'xrandr --output eDP1 --off\n'
+bindkey -s '^b' 'disoff\n'
 bindkey '^[[P' delete-char
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
