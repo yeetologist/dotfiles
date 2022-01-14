@@ -8,7 +8,6 @@ automake
 base
 bc
 bind
-binutils
 bison
 calcurse
 cmus
@@ -55,6 +54,7 @@ pamixer
 patch
 pcmanfm
 pipewire
+pipewire-media-session
 pipewire-pulse
 pkgconf
 poppler
