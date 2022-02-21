@@ -113,6 +113,7 @@ P:preview-tui;\
 r:ringtone;\
 s:suedit;\
 S:splitjoin;\
+V:addtoplaylist;\
 x:xdgdefault;"
 export NNN_BMS="a:$HOME/dl/Videos/Animes;\
 b:$HOME/.local/bin;\
@@ -137,7 +138,7 @@ w:$HOME/dl/Pictures/Wallpapers;\
 y:$HOME/dl/Videos/Youtube;"
 
 n(){
-nnn -Hdexr "$@"
+nnn -HQdexr "$@"
 [ -f "$NNN_TMPFILE" ] && . "$NNN_TMPFILE" && rm -f "$NNN_TMPFILE" > /dev/null
 }
 
