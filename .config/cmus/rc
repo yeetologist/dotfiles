@@ -90,7 +90,7 @@ set pl_sort=
 set play_library=true
 set play_sorted=false
 set repeat=false
-set repeat_current=true
+set repeat_current=false
 set replaygain=disabled
 set replaygain_limit=true
 set replaygain_preamp=0.000000
@@ -157,7 +157,7 @@ bind -f common ^D win-half-page-down
 bind -f common ^E win-scroll-down
 bind -f common ^F win-page-down
 bind -f common ^L refresh
-bind -f common ^R toggle repeat_current
+bind -f common ^R toggle repeat
 bind -f common ^U win-half-page-up
 bind -f common ^Y win-scroll-up
 bind -f common a win-add-l
@@ -192,7 +192,7 @@ bind -f common p player-pause
 bind -f common page_down win-page-down
 bind -f common page_up win-page-up
 bind -f common q quit
-bind -f common r toggle repeat
+bind -f common r toggle repeat_current
 bind -f common right seek +5
 bind -f common s toggle shuffle
 bind -f common space win-toggle
