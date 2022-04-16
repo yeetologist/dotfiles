@@ -40,14 +40,14 @@ alias \
 	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null\ source ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc \ source ${XDG_CONFIG_HOME:-$HOME/.config}/zshnameddirrc" \
 
- # pacman and paru
+ # pacman and yay
 alias \
-	y="paru" \
-	ysyu='paru -Syu --noconfirm' \
-	yi="paru -Qil" \
-	ye="paru -Qqen | tee ~/.config/deploy/official-repos & paru -Qqem | tee ~/.config/deploy/aur" \
-	yc="paru -Scc && paru -Sc" \
-	yr="paru -Rns" \
+	y="yay" \
+	ysyu='yay -Syu --noconfirm' \
+	yi="yay -Qil" \
+	ye="yay -Qqen | tee ~/.config/deploy/official-repos & yay -Qqem | tee ~/.config/deploy/aur" \
+	yc="yay -Scc && yay -Sc" \
+	yr="yay -Rns" \
 	unlock="sudo rm /var/lib/pacman/db.lck" \
 	c="sync;sudo sysctl vm.drop_caches=3" \
 	cleanup='sudo pacman -Rns $(pacman -Qtdq)' \
